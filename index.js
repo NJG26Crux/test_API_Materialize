@@ -1,3 +1,7 @@
+$(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
+
 (function() {
   'use strict';
 
