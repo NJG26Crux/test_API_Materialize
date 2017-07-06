@@ -1,7 +1,3 @@
-$(document).ready(function(){
-    $('.collapsible').collapsible();
-  });
-
 (function() {
   'use strict';
 
@@ -40,6 +36,9 @@ $(document).ready(function(){
       $ul.append($li);
     }
     $listings.append($ul);
+    $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
   };
 
   // Add getMovies function here:
