@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beer Test</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/materialize.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script defer src="index.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    main {
+      font-family: sans-serif;
+      padding: 1.5rem;
+    }
+
+    h1 {
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="row">
+
+      <div class="col s4">
+        <h5>Find your Beer</h5>
+        <!-- <p>Enter a name to search for your favorite beer:</p> -->
+        <form>
+          <ul>
+            <li>
+              <a>ID:</a>
+              <input type="string" placeholder="id" id="searchId" name="id" />
+            </li>
+            <li>
+              <a>Name:</a>
+              <input type="string" placeholder="name" id="searchName" name="search" />
+            </li>
+            <li>
+              <a>ABV>:</a>
+              <input type="string" placeholder="name" id="searchABV_gt" name="search" />
+            </li>
+            <li>
+              <a>ABV<:</a>
+              <input type="string" placeholder="name" id="searchABV_lt" name="search" />
+            </li>
+            <li>
+              <a>IBU>:</a>
+              <input type="string" placeholder="name" id="searchIBU_gt" name="search" />
+            </li>
+            <li>
+              <a>IBU<:</a>
+              <input type="string" placeholder="name" id="searchIBU_lt" name="search" />
+            </li>
+            <li>
+              <a>EBC>:</a>
+              <input type="string" placeholder="name" id="searchEBC_gt" name="search" />
+            </li>
+            <li>
+              <a>EBC<:</a>
+              <input type="string" placeholder="name" id="searchEBC_lt" name="search" />
+            </li>
+            <li>
+              <a>Yeast:</a>
+              <input type="string" placeholder="name" id="searchYeast" name="search" />
+            </li>
+            <li>
+              <a>Hops:</a>
+              <input type="string" placeholder="name" id="searchHops" name="search" />
+            </li>
+            <li>
+              <a>Malt:</a>
+              <input type="string" placeholder="name" id="searchMalt" name="search" />
+            </li>
+            <li>
+              <button type="submit" name="action">Search</button>
+            </li>
+          </ul>
+        </form>
+      </div>
+
+      <div class="col s8">
+
+        <div id="listings"></div>
+
+        <div>spacer</div>
+        <div>spacer</div>
+        <div> </div>
+        <div is="working example">
+          <ul class="collapsible" data-collapsible="accordion">
+            <li>
+              <div class="collapsible-header">First</div>
+              <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+            <li>
+              <div class="collapsible-header">Second</div>
+              <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+            <li>
+              <div class="collapsible-header">Third</div>
+              <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+</body>
+
+</html>
