@@ -11,7 +11,11 @@
   const renderBeers = function () {
     const $listings = $('#listings');
     $('#listings').empty();
-    const $ul = $('<ul class="collapsible" data-collapsible="accordion">');
+    const $ul = $('<ul>');
+      $ul.attr("class", "collapsible");
+      $ul.attr("data-collapsible", "accordion")
+
+
     for (const beer of beers) {
       const $li = $('<li>');    //.text(beer.name);
 

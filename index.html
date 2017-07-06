@@ -34,47 +34,47 @@
           <ul>
             <li>
               <a>ID:</a>
-              <input type="string" placeholder="id" id="searchId" name="id" />
+              <input type="string" id="searchId" name="id" />
             </li>
             <li>
               <a>Name:</a>
-              <input type="string" placeholder="name" id="searchName" name="search" />
+              <input type="string" id="searchName" name="search" />
             </li>
             <li>
               <a>ABV>:</a>
-              <input type="string" placeholder="name" id="searchABV_gt" name="search" />
+              <input type="string" id="searchABV_gt" name="search" />
             </li>
             <li>
               <a>ABV<:</a>
-              <input type="string" placeholder="name" id="searchABV_lt" name="search" />
+              <input type="string" id="searchABV_lt" name="search" />
             </li>
             <li>
               <a>IBU>:</a>
-              <input type="string" placeholder="name" id="searchIBU_gt" name="search" />
+              <input type="string" id="searchIBU_gt" name="search" />
             </li>
             <li>
               <a>IBU<:</a>
-              <input type="string" placeholder="name" id="searchIBU_lt" name="search" />
+              <input type="string" id="searchIBU_lt" name="search" />
             </li>
             <li>
               <a>EBC>:</a>
-              <input type="string" placeholder="name" id="searchEBC_gt" name="search" />
+              <input type="string" id="searchEBC_gt" name="search" />
             </li>
             <li>
               <a>EBC<:</a>
-              <input type="string" placeholder="name" id="searchEBC_lt" name="search" />
+              <input type="string" id="searchEBC_lt" name="search" />
             </li>
             <li>
               <a>Yeast:</a>
-              <input type="string" placeholder="name" id="searchYeast" name="search" />
+              <input type="string" id="searchYeast" name="search" />
             </li>
             <li>
               <a>Hops:</a>
-              <input type="string" placeholder="name" id="searchHops" name="search" />
+              <input type="string" id="searchHops" name="search" />
             </li>
             <li>
               <a>Malt:</a>
-              <input type="string" placeholder="name" id="searchMalt" name="search" />
+              <input type="string" id="searchMalt" name="search" />
             </li>
             <li>
               <button type="submit" name="action">Search</button>
@@ -85,11 +85,13 @@
 
       <div class="col s8">
 
-        <div id="listings"></div>
+        <div id="listings">
+          <!-- <ul id="listings" class="collapsible" data-collapsible="accordion"></ul> -->
+        </div>
 
-        <div>spacer</div>
-        <div>My problem is the below example from Materialize stripped down works but my Implemntation above does not!!!</div>
-        <div>spacer</div>
+        <div>***   spacer   ***</div>
+        <div>My problem is the below example from Materialize (stripped down) works but my JS above does not!!!</div>
+        <div>***   spacer   ***</div>
         <div> </div>
         <div is="working example">
           <ul class="collapsible" data-collapsible="accordion">
