@@ -29,7 +29,7 @@
       const $liRow = $("<div>").attr("class", "row");
       $liBdy.append($liRow);
 
-      const $liRow1 = $("<div>").attr("class", "row");
+      // const $liRow1 = $("<div>").attr("class", "row");
 
       const $liCol1 = $("<div>").attr("class", "col s10");
 
@@ -42,18 +42,7 @@
 
       const disc = ("Discription: " + beer.description);
       const $liBdyDisc = $('<div>').text("Discription: ").text(disc);
-      $liCol1.append($liBdyDisc);
-      $liRow1.append($liCol1);
 
-      const $liCol2 = $("<div>").attr("class", "col s2");
-      const $liImg = $("<img>").attr({"src": beer.image_url, "height": "125px", "width": "auto", "align": "center"});
-      console.log(beer.image_url);
-      $liCol2.append($liImg);
-      $liRow1.append($liCol2);
-
-      const $liRow2 = $("<div>").attr("class", "row");
-
-      const $liCol12 = $("<div>").attr("class", "col s8");
       const $table = $("<table>");
       const $trow1 = $("<tr>");
 
@@ -92,11 +81,63 @@
       $trow3.append($tr3cell1);
 
       $table.append($trow3);
+      $liBdyDisc.append($table);
 
-      $liCol12.append($table);
-      $liRow2.append($liCol12);
-      $liRow.append($liRow1);
-      $liRow.append($liRow2);
+      $liCol1.append($liBdyDisc);
+      $liRow.append($liCol1);
+
+      const $liCol2 = $("<div>").attr("class", "col s2");
+      const $liImg = $("<img>").attr({"src": beer.image_url, "height": "200px", "width": "auto", "align": "center"});
+      console.log(beer.image_url);
+      $liCol2.append($liImg);
+      $liRow.append($liCol2);
+
+      // const $liRow2 = $("<div>").attr("class", "row");
+      //
+      // const $liCol12 = $("<div>").attr("class", "col s8");
+      // const $table = $("<table>");
+      // const $trow1 = $("<tr>");
+      //
+      // const abvText = ("ABV: " + beer.abv);
+      // const $tr1cell1 = $("<td>").text(abvText);
+      // $trow1.append($tr1cell1);
+      //
+      // const ibuText = ("IBU: " + beer.ibu);
+      // const $tr1cell2 = $("<td>").text(ibuText);
+      // $trow1.append($tr1cell2);
+      //
+      // const phText = ("PH: " + beer.ph);
+      // const $tr1cell3 = $("<td>").text(phText);
+      // $trow1.append($tr1cell3);
+      // $table.append($trow1);
+      //
+      // const $trow2 = $("<tr>");
+      //
+      // const ebcText = ("EBC: " + beer.ebc);
+      // const $tr2cell1 = $("<td>").text(ebcText);
+      // $trow2.append($tr2cell1);
+      //
+      // const srmText = ("SRM: " + beer.srm);
+      // const $tr2cell2 = $("<td>").text(srmText);
+      // $trow2.append($tr2cell2);
+      //
+      // // const phText = ("PH: " + beer.ph);
+      // const $tr2cell3 = $("<td>");   //.text(phText);
+      // $trow2.append($tr2cell3);
+      // $table.append($trow2);
+      //
+      // const $trow3 = $("<tr>");
+      //
+      // const attenlevelText = ("Attenuation level: " + beer.attenuation_level);
+      // const $tr3cell1 = $("<td>").attr("colspan", "2").text(attenlevelText);
+      // $trow3.append($tr3cell1);
+      //
+      // $table.append($trow3);
+
+      // $liCol12.append($table);
+      // $liRow2.append($liCol12);
+      // $liRow.append($liRow1);
+      // $liRow.append($liRow2);
       $liBdy.append($liRow);
 
       $li.append($liBdy);
