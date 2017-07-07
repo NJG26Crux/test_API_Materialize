@@ -24,12 +24,80 @@
 
       const $liBdy = $('<div class="collapsible-body">');
       const $liBdyText = $('<span>').text(beer.tagline);
-      $liBdy.append($liBdyText);
+      // $liBdy.append($liBdyText);
 
-      // const $liBdyTag = $('<div>').text(beer.tagline);
-      // $liBdy.append($liBdyTag);
-      // const $liBdyDisc = $('<div>').text(beer.description);
-      // $liBdy.append($liBdyDisc);
+      const $liRow = $("<div>").attr("class", "row");
+      $liBdy.append($liRow);
+
+      const $liRow1 = $("<div>").attr("class", "row");
+
+      const $liCol1 = $("<div>").attr("class", "col s10");
+
+      const tagLine = ("Tagline: " + beer.tagline);
+      const $liBdyTag = $('<div>').text(tagLine);
+      $liCol1.append($liBdyTag);
+
+      const $hr = $('<hr>');
+      $liCol1.append($hr);
+
+      const disc = ("Discription: " + beer.description);
+      const $liBdyDisc = $('<div>').text("Discription: ").text(disc);
+      $liCol1.append($liBdyDisc);
+      $liRow1.append($liCol1);
+
+      const $liCol2 = $("<div>").attr("class", "col s2");
+      const $liImg = $("<img>").attr({"src": beer.image_url, "height": "125px", "width": "auto", "align": "center"});
+      console.log(beer.image_url);
+      $liCol2.append($liImg);
+      $liRow1.append($liCol2);
+
+      const $liRow2 = $("<div>").attr("class", "row");
+
+      const $liCol12 = $("<div>").attr("class", "col s8");
+      const $table = $("<table>");
+      const $trow1 = $("<tr>");
+
+      const abvText = ("ABV: " + beer.abv);
+      const $tr1cell1 = $("<td>").text(abvText);
+      $trow1.append($tr1cell1);
+
+      const ibuText = ("IBU: " + beer.ibu);
+      const $tr1cell2 = $("<td>").text(ibuText);
+      $trow1.append($tr1cell2);
+
+      const phText = ("PH: " + beer.ph);
+      const $tr1cell3 = $("<td>").text(phText);
+      $trow1.append($tr1cell3);
+      $table.append($trow1);
+
+      const $trow2 = $("<tr>");
+
+      const ebcText = ("EBC: " + beer.ebc);
+      const $tr2cell1 = $("<td>").text(ebcText);
+      $trow2.append($tr2cell1);
+
+      const srmText = ("SRM: " + beer.srm);
+      const $tr2cell2 = $("<td>").text(srmText);
+      $trow2.append($tr2cell2);
+
+      // const phText = ("PH: " + beer.ph);
+      const $tr2cell3 = $("<td>");   //.text(phText);
+      $trow2.append($tr2cell3);
+      $table.append($trow2);
+
+      const $trow3 = $("<tr>");
+
+      const attenlevelText = ("Attenuation level: " + beer.attenuation_level);
+      const $tr3cell1 = $("<td>").attr("colspan", "2").text(attenlevelText);
+      $trow3.append($tr3cell1);
+
+      $table.append($trow3);
+
+      $liCol12.append($table);
+      $liRow2.append($liCol12);
+      $liRow.append($liRow1);
+      $liRow.append($liRow2);
+      $liBdy.append($liRow);
 
       $li.append($liBdy);
 
@@ -59,7 +127,13 @@ const getBeers = function(name) {
               image_url: item.image_url,
               name: item.name,
               tagline: item.tagline,
-              description: item.description
+              description: item.description,
+              abv: item.abv,
+              ibu: item.ibu,
+              ebc: item.ebc,
+              attenuation_level: item.attenuation_level,
+              ph: item.ph,
+              srm: item.srm
             };
             newBeers.push(newItem);
           }
@@ -77,12 +151,12 @@ const getBeers = function(name) {
     // alert ('Submitted');
     var id = $('#searchId').val();
     var name = $('#searchName').val();
-    var ABV_gt = $('#searchABV_gt').val();
-    var ABV_lt = $('#searchABV_lt').val();
-    var IBU_gt = $('#searchIBU_gt').val();
-    var IBU_lt = $('#searchIBU_lt').val();
-    var EBC_gt = $('#searchEBC_gt').val();
-    var EBC_lt = $('#searchEBC_lt').val();
+    var abv_gt = $('#searchABV_gt').val();
+    var abv_lt = $('#searchABV_lt').val();
+    var ibu_gt = $('#searchIBU_gt').val();
+    var ibu_lt = $('#searchIBU_lt').val();
+    var ebc_gt = $('#searchEBC_gt').val();
+    var ebc_lt = $('#searchEBC_lt').val();
     var yeast = $('#searchYeast').val();
     var hops = $('#searchHops').val();
     var malt = $('#searchMalt').val();
@@ -94,17 +168,17 @@ const getBeers = function(name) {
       searchVar.push('ids=' + id);
     } if (name) {
       searchVar.push('beer_name=' + name);
-    } if (ABV_gt) {
+    } if (abv_gt) {
       searchVar.push('abv_gt=' + abv_gt);
-    } if (ABV_lt) {
+    } if (abv_lt) {
       searchVar.push('abv_lt=' + abv_lt);
-    } if (IBU_gt) {
+    } if (ibu_gt) {
       searchVar.push('ibu_gt=' + ibu_gt);
-    } if (IBU_lt) {
+    } if (ibu_lt) {
       searchVar.push('ibu_lt=' + ibu_lt);
-    } if (EBC_gt) {
+    } if (ebc_gt) {
       searchVar.push('ebc_gt=' + ebc_gt);
-    } if (EBC_lt) {
+    } if (ebc_lt) {
       searchVar.push('ebc_lt=' + ebc_lt);
     } if (yeast) {
       searchVar.push('yeast=' + yeast);
