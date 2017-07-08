@@ -1,3 +1,12 @@
+/*jshint esversion: 6 */
+
+// this is to initilize modals ***jam
+$(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+  });
+// this is to initilize modals ***jam
+
 (function() {
   'use strict';
 
@@ -7,29 +16,25 @@
   let searchVar = [];
   let searchString = '';
 
-  // Add renderMovies function here:
   const renderBeers = function () {
     const $listings = $('#listings');
     $('#listings').empty();
     const $ul = $('<ul>');
       $ul.attr("class", "collapsible");
-      $ul.attr("data-collapsible", "accordion")
+      $ul.attr("data-collapsible", "accordion");
 
 
     for (const beer of beers) {
-      const $li = $('<li>');    //.text(beer.name);
+      const $li = $('<li>');
 
       const $liHdr = $('<div class="collapsible-header">').text(beer.name);
       $li.append($liHdr);
 
       const $liBdy = $('<div class="collapsible-body">');
       const $liBdyText = $('<span>').text(beer.tagline);
-      // $liBdy.append($liBdyText);
 
       const $liRow = $("<div>").attr("class", "row");
       $liBdy.append($liRow);
-
-      // const $liRow1 = $("<div>").attr("class", "row");
 
       const $liCol1 = $("<div>").attr("class", "col s10");
 
@@ -47,38 +52,91 @@
       const $trow1 = $("<tr>");
 
       const abvText = ("ABV: " + beer.abv);
-      const $tr1cell1 = $("<td>").text(abvText);
+      const $abvModal1 = $("<a>").text(abvText).attr({class: "modal-close", href: "#modal1"});
+      var $tr1cell1 = $("<td>");
+      $tr1cell1.append($abvModal1);
       $trow1.append($tr1cell1);
 
       const ibuText = ("IBU: " + beer.ibu);
-      const $tr1cell2 = $("<td>").text(ibuText);
+      const $ibuModal2 = $("<a>").text(ibuText).attr({class: "modal-close", href: "#modal2"});
+      const $tr1cell2 = $("<td>");
+      $tr1cell2.append($ibuModal2);
       $trow1.append($tr1cell2);
 
       const phText = ("PH: " + beer.ph);
-      const $tr1cell3 = $("<td>").text(phText);
+      const $phModal5 = $("<a>").text(phText).attr({class: "modal-close", href: "#modal5"});
+      const $tr1cell3 = $("<td>");
+      $tr1cell3.append($phModal5);
       $trow1.append($tr1cell3);
       $table.append($trow1);
 
       const $trow2 = $("<tr>");
 
       const ebcText = ("EBC: " + beer.ebc);
-      const $tr2cell1 = $("<td>").text(ebcText);
+      const $ebcModal3 = $("<a>").text(ebcText).attr({class: "modal-close", href: "#modal3"});
+      const $tr2cell1 = $("<td>");
+      $tr2cell1.append($ebcModal3);
       $trow2.append($tr2cell1);
 
       const srmText = ("SRM: " + beer.srm);
-      const $tr2cell2 = $("<td>").text(srmText);
+      const $srmModal4 = $("<a>").text(srmText).attr({class: "modal-close", href: "#modal4"});
+      const $tr2cell2 = $("<td>");
+      $tr2cell2.append($srmModal4);
       $trow2.append($tr2cell2);
 
-      // const phText = ("PH: " + beer.ph);
-      const $tr2cell3 = $("<td>");   //.text(phText);
+      const $tr2cell3 = $("<td>");
+      const $colorText = $("<span>").text("Color: ");
+      $tr2cell3.append($colorText);
+        var ebcColor = '';
+        beer.ebc = Number(beer.ebc);
+        if ( beer.ebc < 6) {
+          ebcColor = ('colorBtn5');
+        } else if ( beer.ebc < 8) {
+            ebcColor = ('colorBtn7');
+        } else if ( beer.ebc < 12) {
+            ebcColor = ('colorBtn11');
+        } else if ( beer.ebc < 16) {
+            ebcColor = ('colorBtn15');
+        } else if ( beer.ebc < 20) {
+            ebcColor = ('colorBtn19');
+        } else if ( beer.ebc < 26) {
+            ebcColor = ('colorBtn25');
+        } else if ( beer.ebc < 33) {
+            ebcColor = ('colorBtn32');
+        } else if ( beer.ebc < 39) {
+            ebcColor = ('colorBtn38');
+        } else if ( beer.ebc < 47) {
+            ebcColor = ('colorBtn46');
+        } else if ( beer.ebc < 57) {
+            ebcColor = ('colorBtn56');
+        } else if ( beer.ebc < 69) {
+            ebcColor = ('colorBtn68');
+        } else if ( beer.ebc < 79) {
+            ebcColor = ('colorBtn78');
+        } else if ( beer.ebc === 79) {
+            ebcColor = ('colorBtn79');
+        } else if ( beer.ebc > 79) {
+            ebcColor = ('colorBtn79');
+        }
+      const $colorBtn = $("<a>").attr("class", "btn " + ebcColor);
+
+      $tr2cell3.append($colorBtn);
+
       $trow2.append($tr2cell3);
       $table.append($trow2);
 
       const $trow3 = $("<tr>");
 
       const attenlevelText = ("Attenuation level: " + beer.attenuation_level);
-      const $tr3cell1 = $("<td>").attr("colspan", "2").text(attenlevelText);
+      const $attenlevelModal6 = $("<a>").text(attenlevelText).attr({class: "modal-close", href: "#modal6"});
+      const $tr3cell1 = $("<td>").attr("colspan", "2");
+      $tr3cell1.append($attenlevelModal6);
       $trow3.append($tr3cell1);
+
+      const $tr3cell3 = $("<td>");
+      const $recipeBtn = $("<button>").text("Recipe").attr("beerId", beer.id);
+      $tr3cell3.append($recipeBtn);
+      $trow3.append($tr3cell3);
 
       $table.append($trow3);
       $liBdyDisc.append($table);
@@ -88,56 +146,10 @@
 
       const $liCol2 = $("<div>").attr("class", "col s2");
       const $liImg = $("<img>").attr({"src": beer.image_url, "height": "200px", "width": "auto", "align": "center"});
-      console.log(beer.image_url);
+      // console.log(beer.image_url);
       $liCol2.append($liImg);
       $liRow.append($liCol2);
 
-      // const $liRow2 = $("<div>").attr("class", "row");
-      //
-      // const $liCol12 = $("<div>").attr("class", "col s8");
-      // const $table = $("<table>");
-      // const $trow1 = $("<tr>");
-      //
-      // const abvText = ("ABV: " + beer.abv);
-      // const $tr1cell1 = $("<td>").text(abvText);
-      // $trow1.append($tr1cell1);
-      //
-      // const ibuText = ("IBU: " + beer.ibu);
-      // const $tr1cell2 = $("<td>").text(ibuText);
-      // $trow1.append($tr1cell2);
-      //
-      // const phText = ("PH: " + beer.ph);
-      // const $tr1cell3 = $("<td>").text(phText);
-      // $trow1.append($tr1cell3);
-      // $table.append($trow1);
-      //
-      // const $trow2 = $("<tr>");
-      //
-      // const ebcText = ("EBC: " + beer.ebc);
-      // const $tr2cell1 = $("<td>").text(ebcText);
-      // $trow2.append($tr2cell1);
-      //
-      // const srmText = ("SRM: " + beer.srm);
-      // const $tr2cell2 = $("<td>").text(srmText);
-      // $trow2.append($tr2cell2);
-      //
-      // // const phText = ("PH: " + beer.ph);
-      // const $tr2cell3 = $("<td>");   //.text(phText);
-      // $trow2.append($tr2cell3);
-      // $table.append($trow2);
-      //
-      // const $trow3 = $("<tr>");
-      //
-      // const attenlevelText = ("Attenuation level: " + beer.attenuation_level);
-      // const $tr3cell1 = $("<td>").attr("colspan", "2").text(attenlevelText);
-      // $trow3.append($tr3cell1);
-      //
-      // $table.append($trow3);
-
-      // $liCol12.append($table);
-      // $liRow2.append($liCol12);
-      // $liRow.append($liRow1);
-      // $liRow.append($liRow2);
       $liBdy.append($liRow);
 
       $li.append($liBdy);
@@ -150,19 +162,24 @@
   });
   };
 
-  // Add getMovies function here:
 const getBeers = function(name) {
-      var $xhr = $.getJSON(`https://api.punkapi.com/v2/beers?${searchVar}`)
+
+      $('.progress').css('visibility', 'visible');
+
+      var $xhr = $.getJSON(`https://api.punkapi.com/v2/beers?${searchVar}`);
       $xhr.done(function(data) {
           if ($xhr.status !== 200) {
               return;
           }
+
           console.log(data);
-          // beers = data;
+
           beerList = data;
 
           const newBeers = [];
           for (const item of data) {
+            // console.log(item.ingredients.hops);
+            // const newHops = []
             const newItem = {
               id: item.id,
               image_url: item.image_url,
@@ -175,21 +192,27 @@ const getBeers = function(name) {
               attenuation_level: item.attenuation_level,
               ph: item.ph,
               srm: item.srm
+              //
+              // for (const item of data.ingredients) {
+              //   const newHops = []
+              // }
+              //
             };
             newBeers.push(newItem);
           }
           beers = newBeers;
-          console.log('beers = ' + beers);
+          // console.log('beers = ' + beers);
           renderBeers();
+          $('.progress').css('visibility', 'hidden');
       });
       searchVar = [];
       searchString = '';
   };
 
-  // Add submit event listener here:
+
   $('form').submit(function(event) {
     event.preventDefault();
-    // alert ('Submitted');
+
     var id = $('#searchId').val();
     var name = $('#searchName').val();
     var abv_gt = $('#searchABV_gt').val();
@@ -202,8 +225,8 @@ const getBeers = function(name) {
     var hops = $('#searchHops').val();
     var malt = $('#searchMalt').val();
 
-    console.log('name: ',name);
-    console.log('id: ',id);
+    // console.log('name: ',name);
+    // console.log('id: ',id);
 
     if (id) {
       searchVar.push('ids=' + id);
@@ -231,8 +254,8 @@ const getBeers = function(name) {
 
     searchString = searchVar.join('&');
 
-    console.log('searchVar: ' + searchVar);
-    console.log('searchString: ' + searchString);
+    // console.log('searchVar: ' + searchVar);
+    // console.log('searchString: ' + searchString);
 
     getBeers(name);
   });

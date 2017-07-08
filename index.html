@@ -41,27 +41,27 @@
               <input type="string" id="searchName" name="search" />
             </li>
             <li>
-              <a>ABV>:</a>
+              <a class="modal-close" href="#modal1">ABV&#62:</a>
               <input type="string" id="searchABV_gt" name="search" />
             </li>
             <li>
-              <a>ABV<:</a>
+              <a class="modal-close" href="#modal1">ABV&#60:</a>
               <input type="string" id="searchABV_lt" name="search" />
             </li>
             <li>
-              <a>IBU>:</a>
+              <a class="modal-close" href="#modal2">IBU&#62:</a>
               <input type="string" id="searchIBU_gt" name="search" />
             </li>
             <li>
-              <a>IBU<:</a>
+              <a class="modal-close" href="#modal2">IBU&#60:</a>
               <input type="string" id="searchIBU_lt" name="search" />
             </li>
             <li>
-              <a>EBC>:</a>
+              <a class="modal-close" href="#modal3">EBC&#62:</a>
               <input type="string" id="searchEBC_gt" name="search" />
             </li>
             <li>
-              <a>EBC<:</a>
+              <a class="modal-close" href="#modal3">EBC&#60:</a>
               <input type="string" id="searchEBC_lt" name="search" />
             </li>
             <li>
@@ -81,38 +81,125 @@
             </li>
           </ul>
         </form>
+
+        <div class="progress">
+          <div class="indeterminate"></div>
+
+        </div>
+
+        <div>What are all those jumbled letters above? Click on each of them for more information.</div>
+
+        <div id="modal1" class="modal">
+          <div class="modal-content">
+            <table>
+              <thead>
+                <th>Name</th>
+                <th>Discription</th>
+              </thead>
+              <tbody>
+                <row>
+                  <td>ABV</td>
+                  <td>Alcohol by volume (abbreviated as ABV, abv, or alc/vol) is a standard measure of how much alcohol (ethanol) is contained in a given volume of an alcoholic beverage (expressed as a volume percent).</td>
+                </row>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="modal2" class="modal">
+          <div class="modal-content">
+            <table>
+              <thead>
+                <th>Name</th>
+                <th>Discription</th>
+              </thead>
+              <tbody>
+                <row>
+                  <td>IBU</td>
+                  <td>IBU is an abbreviation for the International Bitterness Units scale, a gauge of beer's bitterness. What IBUs measure are the parts per million of isohumulone found in a beer. Isohumulone is the acid found in hops that gives beer its bitter bite.</td>
+                </row>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="modal3" class="modal">
+          <div class="modal-content">
+            <table>
+              <thead>
+                <th>Name</th>
+                <th>Discription</th>
+              </thead>
+              <tbody>
+                <row>
+                  <td>EBC</td>
+                  <td>The EBC convention measures beer and wort colour, as well as quantifying turbidity (also known as haze) in beer.</td>
+                </row>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="modal4" class="modal">
+          <div class="modal-content">
+            <table>
+              <thead>
+                <th>Name</th>
+                <th>Discription</th>
+              </thead>
+              <tbody>
+                <row>
+                  <td>SRM</td>
+                  <td>The Standard Reference Method, abbreviated as SRM is the color system used by brewers to specify finished beer and malt color. In the case of malt it is actually the SRM color of a laboratory wort made from the malt which is printed on the package.</td>
+                </row>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="modal5" class="modal">
+          <div class="modal-content">
+            <table>
+              <thead>
+                <th>Name</th>
+                <th>Discription</th>
+              </thead>
+              <tbody>
+                <row>
+                  <td>PH</td>
+                  <td>The pH scale runs from 0 to 14, with the range of 0-7 being acidic, and 8-14 being more alkaline. Most of what we eat and drink is around 7. Dark malts tend to have lower, more acidic pH levels, and slight pH differences affect the hop-components, and the bitterness of the flavour.</td>
+                </row>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="modal6" class="modal">
+          <div class="modal-content">
+            <table>
+              <thead>
+                <th>Name</th>
+                <th>Discription</th>
+              </thead>
+              <tbody>
+                <row>
+                  <td class="noWrap">Attenuation level</td>
+                  <td>Attenuation is the percentage that measures the conversion of sugars into alcohol and carbon dioxide by the fermentation process; a more attenuated beer will generally be drier and more alcoholic than a less attenuated beer made from the same wort.</td>
+                </row>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
       </div>
 
       <div class="col s8">
 
-        <!-- <div>Start id="listings"</div> -->
         <div id="listings"></div>
-        <!-- <div>End id="listings"</div> -->
-
-        <!-- <div>***   spacer   ***</div>
-        <div>My problem is now: FIXED! ty jacob</div>
-        <div>***   spacer   ***</div>
-
-        <div>Start id="working example"</div>
-        <div is="working example">
-          <ul class="collapsible" data-collapsible="accordion">
-            <li>
-              <div class="collapsible-header">First</div>
-              <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-              <div class="collapsible-header">Second</div>
-              <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-              <div class="collapsible-header">Third</div>
-              <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-          </ul>
-        </div>
-        <div>End id="working example"</div> -->
 
       </div>
+
+    </div>
 
     </div>
   </main>
