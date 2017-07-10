@@ -2,6 +2,14 @@ td, th {
     padding: 5px 5px 5px 5px !important;
   }
 
+ul {
+    margin-top: 0;
+  }
+
+.btmMarg {
+  margin-bottom: 14px;
+}
+
 .progress {
   visibility: hidden;
 }
@@ -12,53 +20,53 @@ td, th {
 
 .colorBtn5 {
   background-color: #F8F753 !important;
-  cursor: pointer !important;
+  cursor: default !important;
 }
 .colorBtn7 {
   background-color: #F6F513 !important;
-  ursor: pointer !important;
+  cursor: default !important;
 }
 .colorBtn11 {
   background-color: #ECE61A !important;
-  ursor: pointer !important;
+  cursor: default !important;
 }
 .colorBtn15 {
   background-color: #D5BC26 !important;
-  ursor: pointer !important;
+  cursor: default !important;
 }
 .colorBtn19 {
   background-color: #BF923B !important;
-  ursor: pointer !important;
+  cursor: default !important;
 }
 .colorBtn25 {
   background-color: #BF813A !important;
-  ursor: pointer !important;
+  cursor: default !important;
 }
 .colorBtn32 {
   background-color: #BC6733 !important;
-  ursor: pointer !important;
+  cursor: default !important;
 }
 .colorBtn38 {
   background-color: #8D4C32 !important;
-  ursor: pointer !important;
+  cursor: default !important;
 }
 .colorBtn46 {
   background-color: #5D341A !important;
-  ursor: pointer !important;
+  cursor: default !important;
 }
 .colorBtn56 {
   background-color: #261716 !important;
-  ursor: pointer !important;
+  cursor: default !important;
 }
 .colorBtn68 {
   background-color: #0F0B0A !important;
-  ursor: pointer !important;
+  cursor: default !important;
 }
 .colorBtn78 {
   background-color: #080707 !important;
-  ursor: pointer !important;
+  cursor: default !important;
 }
 .colorBtn79 {
   background-color: #080707 !important;
-  ursor: pointer !important;
+  cursor: default !important;
 }
