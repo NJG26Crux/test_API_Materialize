@@ -148,7 +148,7 @@ $(document).ready(function(){
 
       $table.append($trow3);
       $liBdyDisc.append($table);
-      $liBdyDisc.append($foodPair);
+      // $liBdyDisc.append($foodPair);
 
       $liCol1.append($liBdyDisc);
       $liRow.append($liCol1);
