@@ -472,6 +472,8 @@ const getBeers = function(name) {
 
   $('form').submit(function(event) {
     event.preventDefault();
+    $("#Recipe").empty();
+    $("#listings").slideDown("slow");
 
     var id = $('#searchId').val();
     var name = $('#searchName').val();
